@@ -1,0 +1,9 @@
+#!usr/bin/bash
+
+echo "Loading preferences from home interface..."
+
+CURR_DIR=$PWD
+
+cd ~/Projects/python-venvs/ml-pytorch/venv/bin
+source activate
+cd $CURR_DIR
