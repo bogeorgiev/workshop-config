@@ -2,6 +2,14 @@ set number
 set relativenumber
 set showmatch
 
+" Install vim plug if not present
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -19,6 +27,8 @@ Plug 'tpope/vim-fugitive'
 "Status bars
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'lervag/vimtex'
 
 call plug#end()
 
