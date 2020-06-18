@@ -5,14 +5,18 @@ set showmatch
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+"Conquer of Completion (Autocomplete)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+"File tree structure and navigation
 Plug 'preservim/nerdtree'
 
+"Color themes
 Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 
+"Status bars
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
