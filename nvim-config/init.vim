@@ -13,18 +13,27 @@ endif
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+"Conquer of Completion (Autocompletion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+"File tree
 Plug 'preservim/nerdtree'
 
+"Color themes
 Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 
+"Status bars
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+"LaTeX Modules
 Plug 'lervag/vimtex'
+
+"Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -32,6 +41,14 @@ call plug#end()
 " Nerdtree setup
 map <C-n> :NERDTreeToggle<CR>
 
+
+
+"----------------------------------------
+"Snippets
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<C-l>"
+let g:UltiSnipsJumpForwardTrigger = "<C-l>"
+let g:UltiSnipsJumpBackwardTrigger = "`"
 
 "----------------------------------------
 " Gruvbox setup
@@ -63,6 +80,8 @@ set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
+"
+verbose imap <TAB>
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -199,3 +218,7 @@ imap <F2> <ESC>:vs %:r.in<CR>:wa<CR>
 nnoremap cm i#include <bits/stdc++.h><CR><CR>using namespace std;<CR><CR>int main(){<CR>return 0;<CR>}<Esc>
 
 " ----------------------------------------
+" LaTeX mappings
+"
+nnoremap <C-m> i\begin{equation}<CR><CR>\end{equation}<Up><Tab>
+nnoremap <C-k> i$$<Esc>i
