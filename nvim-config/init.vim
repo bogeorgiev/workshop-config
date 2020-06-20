@@ -13,10 +13,10 @@ endif
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Conquer of Completion (Autocompletion)
+"Conquer of Completion (Autocomplete)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"File tree
+"File tree structure and navigation
 Plug 'preservim/nerdtree'
 
 "Color themes
