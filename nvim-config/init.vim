@@ -2,6 +2,7 @@ set number
 set relativenumber
 set showmatch
 
+
 " Install vim plug if not present
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -9,6 +10,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let g:python3_host_prog = expand('~/Projects/python-venvs/ml-standard/bin/python')
 
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
@@ -207,6 +209,10 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 set hidden
 
 
+" Python Scripting
+map <buffer> <F6> :!python %<CR>
+map <buffer> <F7> :vs <CR> :term python %<CR>
+
 " C++ Competitive Programming Utils
 let &g:makeprg="(g++ %:r.cpp -o %:r && time ./%:r < %:r.in)"
 
@@ -220,5 +226,5 @@ nnoremap cm i#include <bits/stdc++.h><CR><CR>using namespace std;<CR><CR>int mai
 " ----------------------------------------
 " LaTeX mappings
 "
-nnoremap <C-m> i\begin{equation}<CR><CR>\end{equation}<Up><Tab>
-nnoremap <C-k> i$$<Esc>i
+" nnoremap <C-m> i\begin{equation}<CR><CR>\end{equation}<Up><Tab>
+" nnoremap <C-k> i$$<Esc>i
